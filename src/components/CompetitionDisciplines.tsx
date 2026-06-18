@@ -14,13 +14,13 @@ const CompetitionDisciplines = () => {
       
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {disciplines.map((discipline, index) => (
-          <a key={discipline.id} href={discipline.link} className="block rounded-xl overflow-hidden relative border border-white/10 transition-all duration-300 aspect-video hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(0,0,0,0.5)] hover:border-accent-primary/50 group fade-in" style={{ transitionDelay: `${index * 0.1}s` }}>
-            <div className="w-full h-full relative">
+          <a key={discipline.id} href={discipline.link} className="flex flex-col rounded-xl overflow-hidden relative border border-white/10 transition-all duration-300 h-[260px] hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(0,0,0,0.5)] hover:border-accent-primary/50 group fade-in" style={{ transitionDelay: `${index * 0.1}s` }}>
+            <div className="w-full flex-1 relative overflow-hidden bg-black/20">
               <img src={discipline.image} alt={discipline.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-              <div className="absolute inset-0 bg-linear-to-t from-[#151515] to-transparent via-transparent via-60% transition-colors duration-300 group-hover:from-accent-primary/80"></div>
+              <div className="absolute inset-0 bg-linear-to-t from-transparent to-transparent via-transparent via-60% transition-colors duration-300 group-hover:from-accent-primary/80"></div>
             </div>
-            <div className="absolute bottom-0 left-0 w-full p-4 z-10">
-              <h4 className="font-body text-white text-[1rem] font-bold tracking-wide m-0 text-center drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">{discipline.name}</h4>
+            <div className="w-full p-3 bg-[#151515] z-10 flex justify-center items-center shrink-0 h-[72px]">
+              <h4 className="font-body text-white text-[1rem] font-bold tracking-wide m-0 text-center leading-tight">{discipline.name}</h4>
             </div>
           </a>
         ))}

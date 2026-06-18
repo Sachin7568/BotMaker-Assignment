@@ -26,7 +26,7 @@ export const disciplines = [
   },
   {
     id: 'fpv-drone',
-    name: 'FPV Drone Racing',
+    name: 'FPV Drone Racing & Aero-modelling',
     image: fpvDrone,
     link: '#'
   },
