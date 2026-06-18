@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-dark: #000000;
+  --color-bg-darker: #0D0D0D;
+  --color-bg-darkest: #121212;
+  
+  --color-accent-primary: #FF4C4C;
+  --color-accent-secondary: #2E2EFF;
+  
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #A0A0A0;
+  
+  --font-heading: "Orbitron", sans-serif;
+  --font-body: "Roboto", sans-serif;
+
+  --background-image-primary-gradient: linear-gradient(90deg, #FF4C4C 0%, #992E2E 100%);
+  --background-image-primary-gradient-hover: linear-gradient(90deg, #FF6666 0%, #B33636 100%);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-primary);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    margin: 0;
+  }
+}
+
+@layer components {
+  /* Scroll Animation Utilities */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Layout Utilities */
+  .container-custom {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .section-padding {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  .section-title {
+    text-align: center;
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #FFFFFF, #A0A0A0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Button Utilities */
+  .btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.25rem;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    transition-property: all;
+    transition-duration: 300ms;
+  }
+
+  .btn-primary {
+    background-image: var(--background-image-primary-gradient);
+    color: var(--color-text-primary);
+  }
+
+  .btn-primary:hover {
+    background-image: var(--background-image-primary-gradient-hover);
+    transform: translateY(-0.125rem);
+    box-shadow: 0 4px 12px rgba(255,76,76,0.4);
+  }
+
+  .btn-secondary {
+    background-color: var(--color-accent-primary);
+    color: var(--color-text-primary);
+  }
+
+  .btn-secondary:hover {
+    background-color: #FF6666;
+    transform: translateY(-0.125rem);
+    box-shadow: 0 4px 12px rgba(255,76,76,0.4);
+  }
+}
